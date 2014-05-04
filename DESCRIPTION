@@ -1,0 +1,13 @@
+Package: nimrod
+Type: Package
+Title: An example package using nimrod programs within R
+Version: 0.1
+Date: 2014-05-04
+Author: Kevin Ushey
+Maintainer: Kevin Ushey <kevinushey@gmail.com>
+Suggests: testthat
+Description: The goal is to automate compilation such that one can
+             simply write nimrod programs in the src directory, and
+             automatically generate wrapper functions that can be used
+             in other C source files.
+License: MIT
