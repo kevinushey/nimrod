@@ -1,7 +1,15 @@
 #!/usr/bin/env sh
 
+## TODO: Portability? Workaround the fact that nimrod breaks
+## if you try to run it from a symlink
+if test -L $(which nimrod); then
+   NIMROD=$(readlink $(which nimrod))
+else
+   NIMROD=nimrod
+fi;
+
 ## Compile the files
-/usr/local/Cellar/nimrod/0.9.2/libexec/bin/nimrod compile -c --noMain src/*.nim
+${NIMROD} compile -c --noMain --opt:speed src/*.nim
 
 ## Move from nimcache to src
 cd src/nimcache
